@@ -1,14 +1,13 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  enabled: true,
   mode: 'jit',
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // class, 'media' or boolean
   theme: {
     extend: {
       colors: {
-        primary: '#202225',
-        secondary: '#5865f2',
         gray: {
           900: '#202225',
           800: '#2f3136',
@@ -18,12 +17,17 @@ module.exports = {
           300: '#e3e5e8',
           200: '#ebedef',
           100: '#f2f3f5',
-        }
-      }
+        },
+      },
+      spacing: {
+        88: '22rem',
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderRadius: ['hover','active'],
+  }
   },
   plugins: [],
-}
+};
